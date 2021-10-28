@@ -11,7 +11,7 @@ In bash run following:
  
 ### Conditions
 - Initially all tests will fail.
-- Analyze `UserService` java doc.
+- Analyze `UserService` java doc and methods definitions.
 - Analyze tests (prepared data, actual action (method call) and expected result).
 - Do not change data model and tests.
 - Implement all methods from `UserServiceImpl` using Java 8 features (lambda, StreamAPI, etc).
