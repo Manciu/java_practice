@@ -26,12 +26,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Privilege> getAllDistinctPrivileges(final List<User> users) {
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .map(User::getPrivileges)
+                .flatMap(x -> x.stream())
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     @Override
     public Optional<User> getUpdateUserWithAgeHigherThan(final List<User> users, final int age) {
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .filter(e -> e.getPrivileges().contains(Privilege.UPDATE))
+                .filter(e -> e.getAge() > age)
+                .findAny();
     }
 
     @Override
