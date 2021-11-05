@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Map<Integer, List<User>> groupByCountOfPrivileges(final List<User> users) {
         return users.stream()
-                .collect(Collectors.toMap(Privilege.values().length, users.stream().collect(Collectors.toList())));
+                .collect(Collectors.groupingBy(u -> u.getPrivileges().size()));
     }
 
     @Override
