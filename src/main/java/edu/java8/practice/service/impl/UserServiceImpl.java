@@ -43,7 +43,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Map<Integer, List<User>> groupByCountOfPrivileges(final List<User> users) {
-        throw new UnsupportedOperationException("Not implemented");
+        return users.stream()
+                .collect(Collectors.toMap(Privilege.values().length, users.stream().collect(Collectors.toList())));
     }
 
     @Override
