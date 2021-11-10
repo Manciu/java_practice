@@ -80,7 +80,6 @@ public class UserServiceImplTest {
                         entry(TWO_PRIVILEGES, singletonList(userWith2Privileges)),
                         entry(FOUR_PRIVILEGES, singletonList(userWith4Privileges)));
     }
-
     @Test
     public void shouldReturnAverageAgeForUsers() {
         final int expectedAverage = 23;
